@@ -58,7 +58,11 @@ int handle_write_char(char c, char buffer[],
  * Return: Number of chars printed.
  */
 int write_number(int is_negative, int ind, char buffer[],
+<<<<<<< HEAD
 	int flags, int width, int precision, int size)
+=======
+		int flags, int width, int precision, int size)
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 {
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
@@ -75,7 +79,11 @@ int write_number(int is_negative, int ind, char buffer[],
 		extra_ch = ' ';
 
 	return (write_num(ind, buffer, flags, width, precision,
+<<<<<<< HEAD
 		length, padd, extra_ch));
+=======
+				length, padd, extra_ch));
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 }
 
 /**
@@ -92,8 +100,13 @@ int write_number(int is_negative, int ind, char buffer[],
  * Return: Number of printed chars.
  */
 int write_num(int ind, char buffer[],
+<<<<<<< HEAD
 	int flags, int width, int prec,
 	int length, char padd, char extra_c)
+=======
+		int flags, int width, int prec,
+		int length, char padd, char extra_c)
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 {
 	int i, padd_start = 1;
 
@@ -129,7 +142,11 @@ int write_num(int ind, char buffer[],
 			if (extra_c)
 				buffer[--padd_start] = extra_c;
 			return (write(1, &buffer[padd_start], i - padd_start) +
+<<<<<<< HEAD
 				write(1, &buffer[ind], length - (1 - padd_start)));
+=======
+					write(1, &buffer[ind], length - (1 - padd_start)));
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 		}
 	}
 	if (extra_c)
@@ -150,8 +167,13 @@ int write_num(int ind, char buffer[],
  * Return: Number of written chars.
  */
 int write_unsgnd(int is_negative, int ind,
+<<<<<<< HEAD
 	char buffer[],
 	int flags, int width, int precision, int size)
+=======
+		char buffer[],
+		int flags, int width, int precision, int size)
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 {
 	/* The number is stored at the bufer's right and starts at position i */
 	int length = BUFF_SIZE - ind - 1, i = 0;
@@ -166,6 +188,10 @@ int write_unsgnd(int is_negative, int ind,
 	if (precision > 0 && precision < length)
 		padd = ' ';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 	while (precision > length)
 	{
 		buffer[--ind] = '0';
@@ -209,7 +235,11 @@ int write_unsgnd(int is_negative, int ind,
  * Return: Number of written chars.
  */
 int write_pointer(char buffer[], int ind, int length,
+<<<<<<< HEAD
 	int width, int flags, char padd, char extra_c, int padd_start)
+=======
+		int width, int flags, char padd, char extra_c, int padd_start)
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 {
 	int i;
 
@@ -241,7 +271,11 @@ int write_pointer(char buffer[], int ind, int length,
 			buffer[1] = '0';
 			buffer[2] = 'x';
 			return (write(1, &buffer[padd_start], i - padd_start) +
+<<<<<<< HEAD
 				write(1, &buffer[ind], length - (1 - padd_start) - 2));
+=======
+					write(1, &buffer[ind], length - (1 - padd_start) - 2));
+>>>>>>> 6ed2ea4246da5b2fe8e9f3d0e66ae8aca37c61ec
 		}
 	}
 	buffer[--ind] = 'x';
